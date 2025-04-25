@@ -1,0 +1,12 @@
+# Jangan track folder node_modules
+node_modules/
+
+# Jangan track log
+*.log
+
+# Jangan track env
+.env
+
+# Jangan track folder build/output sementara
+dist/
+build/

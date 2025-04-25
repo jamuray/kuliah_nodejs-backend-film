@@ -12,7 +12,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 
-
 // script upload
 app.use(express.static("./public"))
  //! Use of Multer
@@ -30,10 +29,8 @@ var upload = multer({
 }); // script untuk penggunaan multer saat upload
 
 
-
 // create data / insert data
 app.post('/api/film',upload.single('image'),(req, res) => {
-
 
     const data = { ...req.body };
     const image= req.body.image;
@@ -70,7 +67,6 @@ app.post('/api/film',upload.single('image'),(req, res) => {
         });
     }
 });
-
 
 
 // read data / get data
@@ -129,8 +125,6 @@ app.put('/api/film/:id', (req, res) => {
 });
 
 
-
-
 // delete data
 app.delete('/api/film/:id', (req, res) => {
     // buat query sql untuk mencari data dan hapus
@@ -161,8 +155,6 @@ app.delete('/api/film/:id', (req, res) => {
         }
     });
 });
-
-
 
 
 // buat server nya menggunakan port sesuai settingan konstanta = 5000
